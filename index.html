@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebCraft UK — Professional Websites for UK Businesses</title>
-    <meta name="description" content="WebCraft UK builds professional, affordable websites for UK small businesses. One-off fee, no monthly costs. See your free preview today.">
+    <title>WebCraft UK — Professional Websites from £500 | Free Preview First</title>
+    <meta name="description" content="We build your website free first — you only pay if you love it. Professional UK business websites from £500 one-off. Free domain, free email, unlimited changes included.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -18,25 +18,42 @@
             --light:  #F8FAFC;
             --border: #E2E8F0;
             --white:  #FFFFFF;
+            --green:  #10B981;
+            --green-l:#ECFDF5;
+            --amber:  #F59E0B;
+            --amber-l:#FFFBEB;
         }
         *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
         html { scroll-behavior:smooth; }
         body { font-family:'Inter',sans-serif; color:var(--text); background:var(--white); -webkit-font-smoothing:antialiased; }
 
+        /* ── ANNOUNCE BAR ── */
+        .announce-bar {
+            background:linear-gradient(90deg,#1D4ED8,#2563EB,#1D4ED8);
+            color:#fff;
+            padding:0.55rem 2rem;
+            text-align:center;
+            font-size:0.82rem;
+            font-weight:600;
+            letter-spacing:0.01em;
+            position:sticky;
+            top:0;
+            z-index:1001;
+        }
+        .announce-bar a { color:#BAE6FD; text-decoration:underline; margin-left:0.4rem; }
+        .announce-bar strong { color:#FDE68A; }
+
         /* ── HEADER ── */
         header {
-            position:sticky; top:0; z-index:1000;
-            background:rgba(255,255,255,0.95);
+            position:sticky; top:38px; z-index:1000;
+            background:rgba(255,255,255,0.96);
             backdrop-filter:blur(12px);
             border-bottom:1px solid var(--border);
             padding:0 2rem;
             display:flex; justify-content:space-between; align-items:center;
             height:68px;
         }
-        .logo {
-            font-size:1.25rem; font-weight:800; color:var(--navy);
-            text-decoration:none; letter-spacing:-.02em;
-        }
+        .logo { font-size:1.25rem; font-weight:800; color:var(--navy); text-decoration:none; letter-spacing:-.02em; }
         .logo span { color:var(--blue); }
         nav { display:flex; gap:2rem; align-items:center; }
         nav a { color:var(--muted); text-decoration:none; font-size:0.9rem; font-weight:500; transition:color .2s; }
@@ -45,8 +62,7 @@
             background:var(--blue); color:#fff;
             padding:0.55rem 1.3rem; border-radius:8px;
             font-weight:600; font-size:0.88rem;
-            text-decoration:none; transition:all .2s;
-            white-space:nowrap;
+            text-decoration:none; transition:all .2s; white-space:nowrap;
         }
         .header-cta:hover { background:var(--blue-h); transform:translateY(-1px); box-shadow:0 4px 12px rgba(37,99,235,.3); }
         .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
@@ -63,9 +79,9 @@
         .hero::before {
             content:'';
             position:absolute; inset:0;
-            background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37,99,235,0.18) 0%, transparent 70%);
+            background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(37,99,235,0.22) 0%, transparent 70%);
         }
-        .hero-inner { position:relative; max-width:820px; margin:0 auto; }
+        .hero-inner { position:relative; max-width:860px; margin:0 auto; }
         .hero-pill {
             display:inline-flex; align-items:center; gap:0.5rem;
             background:rgba(37,99,235,0.15); border:1px solid rgba(37,99,235,0.3);
@@ -79,22 +95,35 @@
             margin-bottom:1.2rem;
         }
         .hero h1 em { color:#60A5FA; font-style:normal; }
+        .hero-anchor {
+            display:inline-block;
+            background:rgba(255,255,255,0.06);
+            border:1px solid rgba(255,255,255,0.12);
+            color:#94A3B8;
+            font-size:0.85rem;
+            font-weight:500;
+            padding:0.5rem 1.2rem;
+            border-radius:999px;
+            margin-bottom:1.4rem;
+        }
+        .hero-anchor s { color:#475569; }
+        .hero-anchor strong { color:#60A5FA; }
         .hero-sub {
             font-size:clamp(1rem,2.2vw,1.15rem); color:#94A3B8;
-            max-width:560px; margin:0 auto 2.5rem; line-height:1.75; font-weight:400;
+            max-width:580px; margin:0 auto 2.5rem; line-height:1.75; font-weight:400;
         }
         .hero-btns { display:flex; gap:0.8rem; flex-wrap:wrap; justify-content:center; margin-bottom:4rem; }
         .btn-primary {
             background:var(--blue); color:#fff;
-            padding:0.85rem 2rem; border-radius:8px;
-            font-weight:600; font-size:0.95rem; text-decoration:none;
+            padding:0.9rem 2.2rem; border-radius:8px;
+            font-weight:700; font-size:0.95rem; text-decoration:none;
             transition:all .2s; display:inline-block;
         }
-        .btn-primary:hover { background:var(--blue-h); transform:translateY(-2px); box-shadow:0 8px 20px rgba(37,99,235,.4); }
+        .btn-primary:hover { background:var(--blue-h); transform:translateY(-2px); box-shadow:0 8px 20px rgba(37,99,235,.45); }
         .btn-ghost {
             background:rgba(255,255,255,0.07); color:#fff;
             border:1px solid rgba(255,255,255,0.15);
-            padding:0.85rem 2rem; border-radius:8px;
+            padding:0.9rem 2.2rem; border-radius:8px;
             font-weight:600; font-size:0.95rem; text-decoration:none;
             transition:all .2s; display:inline-block;
         }
@@ -104,20 +133,73 @@
             border:1px solid rgba(255,255,255,0.08);
             border-radius:12px; overflow:hidden;
             background:rgba(255,255,255,0.04);
-            max-width:600px; margin:0 auto;
+            max-width:640px; margin:0 auto;
         }
-        .stat { flex:1; min-width:120px; padding:1.4rem 1rem; text-align:center; border-right:1px solid rgba(255,255,255,0.08); }
+        .stat { flex:1; min-width:110px; padding:1.4rem 1rem; text-align:center; border-right:1px solid rgba(255,255,255,0.08); }
         .stat:last-child { border-right:none; }
         .stat-n { font-size:1.7rem; font-weight:800; color:#fff; letter-spacing:-.02em; line-height:1; }
         .stat-l { font-size:0.72rem; color:#64748B; margin-top:0.3rem; font-weight:500; text-transform:uppercase; letter-spacing:.06em; }
 
-        /* ── LOGOS / TRUST BAR ── */
+        /* ── VALUE STACK ── */
+        .value-stack {
+            background:linear-gradient(180deg,#0B1220 0%,#0F172A 100%);
+            padding:4rem 2rem;
+            text-align:center;
+            border-bottom:1px solid rgba(255,255,255,0.06);
+        }
+        .value-stack-inner { max-width:960px; margin:0 auto; }
+        .value-stack-label {
+            font-size:0.73rem; font-weight:700; color:#60A5FA;
+            letter-spacing:.12em; text-transform:uppercase; margin-bottom:0.8rem;
+        }
+        .value-stack-h {
+            font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800;
+            color:#fff; letter-spacing:-.025em; margin-bottom:0.5rem;
+        }
+        .value-stack-sub { color:#94A3B8; font-size:0.95rem; margin-bottom:2.5rem; }
+        .value-grid {
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:1rem;
+            margin-bottom:2.5rem;
+            text-align:left;
+        }
+        .value-item {
+            display:flex; align-items:flex-start; gap:0.85rem;
+            background:rgba(255,255,255,0.04);
+            border:1px solid rgba(255,255,255,0.08);
+            border-radius:10px;
+            padding:1.2rem 1.4rem;
+            transition:border-color .2s;
+        }
+        .value-item:hover { border-color:rgba(37,99,235,0.4); }
+        .value-check { color:#34D399; font-size:1.1rem; font-weight:800; flex-shrink:0; margin-top:0.1rem; }
+        .value-item-text strong { display:block; color:#fff; font-size:0.9rem; font-weight:700; margin-bottom:0.2rem; }
+        .value-item-text span { color:#94A3B8; font-size:0.78rem; line-height:1.5; }
+        .value-anchor-box {
+            background:rgba(37,99,235,0.1);
+            border:1px solid rgba(37,99,235,0.25);
+            border-radius:12px;
+            padding:1.8rem 2rem;
+            display:inline-block;
+        }
+        .value-anchor-box .agency-price {
+            font-size:0.85rem; color:#64748B; margin-bottom:0.4rem;
+        }
+        .value-anchor-box .agency-price s { color:#475569; font-weight:600; }
+        .value-anchor-box .our-price {
+            font-size:2.4rem; font-weight:800; color:#fff; letter-spacing:-.03em; line-height:1;
+        }
+        .value-anchor-box .our-price em { color:#60A5FA; font-style:normal; }
+        .value-anchor-box .our-note { font-size:0.8rem; color:#94A3B8; margin-top:0.5rem; }
+
+        /* ── TRUST BAR ── */
         .trust-bar {
             background:var(--light); border-bottom:1px solid var(--border);
             padding:1.2rem 2rem; text-align:center;
         }
         .trust-bar p { font-size:0.78rem; color:var(--muted); font-weight:500; letter-spacing:.06em; text-transform:uppercase; margin-bottom:0.8rem; }
-        .trust-logos { display:flex; gap:2rem; justify-content:center; align-items:center; flex-wrap:wrap; }
+        .trust-logos { display:flex; gap:1.2rem; justify-content:center; align-items:center; flex-wrap:wrap; }
         .trust-tag {
             background:#fff; border:1px solid var(--border);
             padding:0.4rem 1rem; border-radius:999px;
@@ -142,6 +224,7 @@
         .step-num { font-size:0.72rem; font-weight:700; color:var(--blue); letter-spacing:.1em; margin-bottom:1rem; background:var(--blue-l); display:inline-block; padding:0.2rem 0.7rem; border-radius:999px; }
         .step h3 { font-size:1rem; font-weight:700; letter-spacing:-.01em; margin-bottom:0.5rem; }
         .step p { font-size:0.875rem; color:var(--muted); line-height:1.65; }
+        .step-badge { display:inline-block; background:var(--green-l); color:var(--green); font-size:0.68rem; font-weight:700; padding:0.15rem 0.6rem; border-radius:999px; border:1px solid rgba(16,185,129,0.2); margin-bottom:0.6rem; margin-left:0.4rem; }
 
         /* ── FEATURES ── */
         .features-section { padding:6rem 2rem; background:var(--light); }
@@ -152,12 +235,51 @@
         .feat-icon { font-size:1.3rem; margin-bottom:0.6rem; }
         .feature h4 { font-size:0.88rem; font-weight:700; margin-bottom:0.3rem; letter-spacing:-.01em; }
         .feature p { font-size:0.8rem; color:var(--muted); line-height:1.55; }
+        .feature.highlight { border-color:rgba(16,185,129,0.3); background:var(--green-l); }
+        .feature.highlight h4 { color:#065F46; }
+        .feature.highlight p { color:#047857; }
+
+        /* ── SCARCITY BAR ── */
+        .scarcity-bar {
+            background:var(--amber-l);
+            border:1.5px solid var(--amber);
+            border-radius:12px;
+            padding:1rem 1.5rem;
+            max-width:960px;
+            margin:0 auto 2.5rem;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:0.8rem;
+            flex-wrap:wrap;
+            text-align:center;
+        }
+        .scarcity-bar .scarcity-text { font-size:0.88rem; font-weight:600; color:#92400E; }
+        .countdown-wrap { display:flex; align-items:center; gap:0.4rem; }
+        .countdown {
+            font-family:monospace;
+            font-size:1.15rem;
+            font-weight:800;
+            color:#B45309;
+            background:#FDDf8A;
+            padding:0.2rem 0.7rem;
+            border-radius:6px;
+            letter-spacing:0.05em;
+        }
 
         /* ── PRICING ── */
         .pricing { padding:6rem 2rem; background:#fff; }
-        .pricing-header { text-align:center; margin-bottom:3.5rem; }
+        .pricing-header { text-align:center; margin-bottom:3rem; }
         .pricing-header .section-sub { margin:0 auto; }
         .pricing-header .section-rule { margin:1rem auto 0; }
+        .price-anchor-note {
+            text-align:center;
+            margin-bottom:2rem;
+            font-size:0.9rem;
+            color:var(--muted);
+        }
+        .price-anchor-note s { color:#CBD5E1; font-weight:600; }
+        .price-anchor-note strong { color:var(--blue); }
         .pricing-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; max-width:960px; margin:0 auto; }
         .price-card {
             border:1px solid var(--border); border-radius:12px;
@@ -168,6 +290,8 @@
         .price-card.featured { border-color:var(--blue); box-shadow:0 0 0 1px var(--blue); }
         .popular-badge { position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--blue); color:#fff; font-size:0.68rem; font-weight:700; padding:0.2rem 0.9rem; border-radius:999px; letter-spacing:.06em; white-space:nowrap; }
         .price-tier { font-size:0.75rem; font-weight:700; color:var(--muted); letter-spacing:.1em; text-transform:uppercase; margin-bottom:0.8rem; }
+        .price-was { font-size:0.8rem; color:#CBD5E1; margin-bottom:0.2rem; }
+        .price-was s { font-weight:600; }
         .price-amt { font-size:2.6rem; font-weight:800; color:var(--text); letter-spacing:-.03em; line-height:1; margin-bottom:0.3rem; }
         .price-amt sup { font-size:1.2rem; vertical-align:top; margin-top:0.5rem; font-weight:600; }
         .price-desc { font-size:0.82rem; color:var(--muted); margin-bottom:1.8rem; line-height:1.5; }
@@ -175,33 +299,81 @@
         .price-features { list-style:none; display:flex; flex-direction:column; gap:0.6rem; margin-bottom:2rem; }
         .price-features li { font-size:0.85rem; color:var(--text); display:flex; gap:0.6rem; align-items:flex-start; }
         .price-features li::before { content:'✓'; color:var(--blue); font-weight:700; flex-shrink:0; margin-top:1px; }
+        .price-features li.green::before { color:var(--green); }
+        .price-features li.green { font-weight:600; }
         .price-btn {
             display:block; text-align:center; text-decoration:none;
-            padding:0.75rem; border-radius:8px;
-            font-weight:600; font-size:0.88rem;
+            padding:0.8rem; border-radius:8px;
+            font-weight:700; font-size:0.88rem;
             transition:all .2s;
         }
         .price-btn-outline { border:1.5px solid var(--border); color:var(--text); }
         .price-btn-outline:hover { border-color:var(--blue); color:var(--blue); }
         .price-btn-fill { background:var(--blue); color:#fff; }
         .price-btn-fill:hover { background:var(--blue-h); box-shadow:0 4px 12px rgba(37,99,235,.3); }
+        .price-guarantee {
+            text-align:center;
+            margin-top:2.5rem;
+            font-size:0.82rem;
+            color:var(--muted);
+        }
+        .price-guarantee strong { color:var(--text); }
 
-        /* ── EXAMPLES ── */
+        /* ── EXAMPLES (rebranded) ── */
         .examples { padding:6rem 2rem; background:var(--light); }
         .examples-header { text-align:center; margin-bottom:3rem; }
         .example-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; max-width:1100px; margin:0 auto; }
-        .example-card { background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; text-decoration:none; color:inherit; transition:all .25s; display:block; }
+        .example-card { background:#fff; border:1px solid var(--border); border-radius:12px; overflow:hidden; text-decoration:none; color:inherit; transition:all .25s; display:block; position:relative; }
         .example-card:hover { transform:translateY(-5px); box-shadow:0 12px 35px rgba(0,0,0,.1); border-color:#BFDBFE; }
         .example-img { height:155px; background:center/cover no-repeat; }
+        .preview-badge { position:absolute; top:10px; left:10px; background:rgba(15,23,42,0.85); color:#60A5FA; font-size:0.65rem; font-weight:700; padding:0.2rem 0.6rem; border-radius:999px; letter-spacing:0.05em; border:1px solid rgba(96,165,250,0.3); }
         .example-info { padding:1.2rem; }
         .example-cat { font-size:0.7rem; font-weight:700; color:var(--blue); letter-spacing:.08em; text-transform:uppercase; margin-bottom:0.3rem; }
         .example-name { font-weight:700; font-size:0.95rem; margin-bottom:0.2rem; }
         .example-link { font-size:0.78rem; color:var(--muted); }
 
+        /* ── REFERRAL SECTION ── */
+        .referral-section {
+            background:linear-gradient(135deg,#0F172A 0%,#1E293B 100%);
+            padding:5rem 2rem;
+            text-align:center;
+        }
+        .referral-inner { max-width:660px; margin:0 auto; }
+        .referral-pill {
+            background:rgba(52,211,153,0.15);
+            border:1px solid rgba(52,211,153,0.3);
+            color:#6EE7B7;
+            padding:0.3rem 1rem;
+            border-radius:999px;
+            font-size:0.73rem;
+            font-weight:700;
+            letter-spacing:.1em;
+            text-transform:uppercase;
+            display:inline-block;
+            margin-bottom:1.2rem;
+        }
+        .referral-h { font-size:clamp(1.6rem,3vw,2.2rem); font-weight:800; color:#fff; letter-spacing:-.025em; line-height:1.2; margin-bottom:0.8rem; }
+        .referral-amount { font-size:3.5rem; font-weight:800; color:#34D399; letter-spacing:-.03em; line-height:1; margin:0.6rem 0; }
+        .referral-sub { color:#94A3B8; font-size:0.95rem; line-height:1.65; margin-bottom:2rem; max-width:500px; margin-left:auto; margin-right:auto; }
+        .referral-how { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2rem; }
+        .referral-step {
+            background:rgba(255,255,255,0.05);
+            border:1px solid rgba(255,255,255,0.08);
+            border-radius:10px;
+            padding:1.2rem 1.5rem;
+            flex:1;
+            min-width:160px;
+            max-width:200px;
+        }
+        .referral-step-icon { font-size:1.5rem; margin-bottom:0.5rem; }
+        .referral-step-text { font-size:0.82rem; color:#94A3B8; line-height:1.5; }
+        .referral-step-text strong { color:#fff; display:block; margin-bottom:0.2rem; }
+        .referral-cta { color:#34D399; font-size:0.85rem; font-weight:600; }
+
         /* ── FAQ ── */
         .faq { padding:6rem 2rem; background:#fff; }
         .faq-header { text-align:center; margin-bottom:3rem; }
-        .faq-list { max-width:680px; margin:0 auto; display:flex; flex-direction:column; gap:0; border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+        .faq-list { max-width:700px; margin:0 auto; display:flex; flex-direction:column; gap:0; border:1px solid var(--border); border-radius:12px; overflow:hidden; }
         .faq-item { border-bottom:1px solid var(--border); }
         .faq-item:last-child { border-bottom:none; }
         .faq-q { padding:1.25rem 1.5rem; font-weight:600; font-size:0.92rem; cursor:pointer; display:flex; justify-content:space-between; align-items:center; background:#fff; transition:background .15s; user-select:none; }
@@ -213,10 +385,26 @@
 
         /* ── CONTACT ── */
         .contact-section { padding:6rem 2rem; background:var(--navy); }
-        .contact-inner { max-width:700px; margin:0 auto; text-align:center; }
+        .contact-inner { max-width:720px; margin:0 auto; text-align:center; }
         .contact-inner .section-label { color:#60A5FA; }
         .contact-inner .section-h { color:#fff; margin-bottom:0.8rem; }
-        .contact-inner > p { color:#94A3B8; line-height:1.7; margin-bottom:2.5rem; font-size:1rem; }
+        .contact-inner > p { color:#94A3B8; line-height:1.7; margin-bottom:1.5rem; font-size:1rem; }
+        .contact-offer-list {
+            display:flex;
+            flex-wrap:wrap;
+            gap:0.6rem;
+            justify-content:center;
+            margin-bottom:2.5rem;
+        }
+        .contact-offer-tag {
+            background:rgba(52,211,153,0.12);
+            border:1px solid rgba(52,211,153,0.25);
+            color:#6EE7B7;
+            font-size:0.75rem;
+            font-weight:600;
+            padding:0.3rem 0.8rem;
+            border-radius:999px;
+        }
         .contact-cards { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
         .contact-card {
             display:flex; flex-direction:column; align-items:center; gap:0.5rem;
@@ -240,31 +428,39 @@
         @media(max-width:900px) {
             .features-inner { grid-template-columns:1fr; gap:2.5rem; }
             .pricing-cards { grid-template-columns:1fr; max-width:420px; }
+            .referral-how { flex-direction:column; align-items:center; }
         }
         @media(max-width:768px) {
+            .announce-bar { font-size:0.72rem; padding:0.45rem 1rem; }
+            header { top:32px; }
             nav { display:none; position:absolute; top:68px; left:0; right:0; background:#fff; flex-direction:column; padding:1rem 2rem; gap:0.5rem; border-bottom:1px solid var(--border); box-shadow:0 8px 20px rgba(0,0,0,.08); }
             nav.open { display:flex; }
             .hamburger { display:flex; }
             .header-cta-nav { display:none; }
             .features-grid { grid-template-columns:1fr; }
-            .hero-stats { flex-direction:row; }
+            .value-grid { grid-template-columns:1fr; }
         }
     </style>
 </head>
 <body>
+
+<!-- Announcement Bar -->
+<div class="announce-bar">
+    ⏰ &nbsp;<strong>72-hour price hold only</strong> — pricing expires once we move to the next business in the queue. &nbsp;<a href="#pricing">Lock yours in ↓</a>
+</div>
 
 <!-- Header -->
 <header>
     <a href="#" class="logo">Web<span>Craft</span> UK</a>
     <nav id="nav">
         <a href="#how">How It Works</a>
-        <a href="#features">Features</a>
+        <a href="#whats-included">What's Included</a>
         <a href="#pricing">Pricing</a>
         <a href="#examples">Examples</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact" class="header-cta header-cta-nav">Get Started</a>
+        <a href="#contact" class="header-cta header-cta-nav">Get Started Free</a>
     </nav>
-    <a href="#contact" class="header-cta" style="display:none;" id="mobile-cta">Get Started</a>
+    <a href="#contact" class="header-cta" style="display:none;" id="mobile-cta">Get Started Free</a>
     <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
     </button>
@@ -273,12 +469,15 @@
 <!-- Hero -->
 <section class="hero">
     <div class="hero-inner">
-        <div class="hero-pill">🇬🇧 Built for UK Small Businesses</div>
-        <h1>Your business deserves<br>a website that <em>actually works</em></h1>
-        <p class="hero-sub">We build professional, custom websites for UK businesses — and you see it live before you pay a penny.</p>
+        <div class="hero-pill">🇬🇧 200+ UK Businesses — Zero Monthly Fees Ever</div>
+        <h1>We build your website.<br>You see it live. <em>Then</em> decide.</h1>
+        <div class="hero-anchor">
+            Web agencies charge <s>£2,000–£5,000</s> for this. We charge <strong>from £500</strong> — one-off payment, you own it forever.
+        </div>
+        <p class="hero-sub">We research your business, build a fully designed custom website, and send you the live link — completely free. No card required. Pay only if you love it.</p>
         <div class="hero-btns">
-            <a href="#contact" class="btn-primary">Get Your Free Preview</a>
-            <a href="#examples" class="btn-ghost">See Our Work</a>
+            <a href="#contact" class="btn-primary">Get My Free Website Preview →</a>
+            <a href="#examples" class="btn-ghost">See Example Sites</a>
         </div>
         <div class="hero-stats">
             <div class="stat">
@@ -287,7 +486,7 @@
             </div>
             <div class="stat">
                 <div class="stat-n">£500</div>
-                <div class="stat-l">From</div>
+                <div class="stat-l">Starts From</div>
             </div>
             <div class="stat">
                 <div class="stat-n">48hr</div>
@@ -295,21 +494,84 @@
             </div>
             <div class="stat">
                 <div class="stat-n">£0</div>
-                <div class="stat-l">Monthly Fee</div>
+                <div class="stat-l">Monthly Fees</div>
             </div>
+            <div class="stat">
+                <div class="stat-n">£0</div>
+                <div class="stat-l">Upfront Cost</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Value Stack -->
+<section class="value-stack" id="whats-included">
+    <div class="value-stack-inner">
+        <div class="value-stack-label">Everything Included</div>
+        <h2 class="value-stack-h">What you get — with every single package</h2>
+        <p class="value-stack-sub">No hidden extras. No upsells. This is what's included from day one.</p>
+        <div class="value-grid">
+            <div class="value-item">
+                <div class="value-check">✓</div>
+                <div class="value-item-text">
+                    <strong>Free custom preview — before you pay a penny</strong>
+                    <span>We build your full website first. You see it live, approve it, request changes — all before committing. It's yours to view free, no card needed.</span>
+                </div>
+            </div>
+            <div class="value-item">
+                <div class="value-check">✓</div>
+                <div class="value-item-text">
+                    <strong>Unlimited amendments for 12 months — no charge</strong>
+                    <span>Change anything, any time, as many times as you like for a full year. New services, updated prices, photos, copy — all handled free of charge.</span>
+                </div>
+            </div>
+            <div class="value-item">
+                <div class="value-check">✓</div>
+                <div class="value-item-text">
+                    <strong>Free .co.uk domain — set up &amp; connected by us</strong>
+                    <span>Your own professional web address (e.g. yourshopname.co.uk) included free. We buy it, install it, and connect everything for you.</span>
+                </div>
+            </div>
+            <div class="value-item">
+                <div class="value-check">✓</div>
+                <div class="value-item-text">
+                    <strong>Free professional business email address</strong>
+                    <span>Look the part with an email like hello@yourshopname.co.uk instead of a generic Gmail. Included free and fully set up for you.</span>
+                </div>
+            </div>
+            <div class="value-item">
+                <div class="value-check">✓</div>
+                <div class="value-item-text">
+                    <strong>Live on Google in 48 hours</strong>
+                    <span>Once you're happy and confirm, your site is live and indexed on Google within 48 hours. Fast, simple, sorted.</span>
+                </div>
+            </div>
+            <div class="value-item">
+                <div class="value-check">✓</div>
+                <div class="value-item-text">
+                    <strong>30% referral commission — unlimited</strong>
+                    <span>Refer another business that goes live with us and we'll send you £150–£600+ cash. No limit on how many referrals you make.</span>
+                </div>
+            </div>
+        </div>
+        <div class="value-anchor-box">
+            <div class="agency-price">Web agencies charge <s>£2,000–£5,000</s> for all of the above</div>
+            <div class="our-price"><em>£500</em> one-off payment</div>
+            <div class="our-note">No monthly fees · No subscriptions · You own it outright</div>
         </div>
     </div>
 </section>
 
 <!-- Trust Bar -->
 <div class="trust-bar">
-    <p>Trusted by businesses across</p>
+    <p>Trusted by UK businesses across</p>
     <div class="trust-logos">
         <span class="trust-tag">Barbers &amp; Salons</span>
         <span class="trust-tag">Personal Trainers</span>
         <span class="trust-tag">Restaurants &amp; Cafés</span>
         <span class="trust-tag">Tradespeople</span>
         <span class="trust-tag">Nail &amp; Beauty Studios</span>
+        <span class="trust-tag">Tattoo Studios</span>
         <span class="trust-tag">And More</span>
     </div>
 </div>
@@ -319,29 +581,32 @@
     <div class="how-header">
         <div class="section-label">The Process</div>
         <h2 class="section-h">See it before you pay for it</h2>
-        <p class="section-sub">We build your website upfront, for free. You only pay when you love it.</p>
+        <p class="section-sub">We build your website upfront at zero cost to you. You only pay when you love it — and not a second before.</p>
         <div class="section-rule"></div>
     </div>
     <div class="steps">
         <div class="step">
             <span class="step-num">Step 01</span>
+            <span class="step-badge">FREE</span>
             <h3>We build your preview</h3>
-            <p>We research your business and build a fully designed, live website — completely free — so you can see exactly what you're getting before committing.</p>
+            <p>We research your business and build a fully designed, live website — completely free — so you can see exactly what you're getting before committing to anything.</p>
         </div>
         <div class="step">
             <span class="step-num">Step 02</span>
-            <h3>You review it</h3>
-            <p>Browse your live preview on your phone or laptop. If you want changes — different layout, different colours, different copy — just say the word.</p>
+            <span class="step-badge">FREE</span>
+            <h3>You review &amp; request changes</h3>
+            <p>Browse your live preview on your phone or laptop. Want different colours, layout, copy, or anything else? Just say the word — it's just a draft. We change anything, free.</p>
         </div>
         <div class="step">
             <span class="step-num">Step 03</span>
-            <h3>We personalise it</h3>
-            <p>We add your real photos, exact services and prices, opening hours, and any other details. The final site is 100% about your business.</p>
+            <span class="step-badge">FREE</span>
+            <h3>We personalise it for you</h3>
+            <p>We add your real photos, exact services and prices, opening hours, and every detail. The final site is 100% about your business — nothing generic.</p>
         </div>
         <div class="step">
             <span class="step-num">Step 04</span>
-            <h3>We go live</h3>
-            <p>One payment. We connect your domain and have your site live within 48 hours. That's it — no ongoing fees, no subscriptions, no surprises.</p>
+            <h3>You pay once. We go live.</h3>
+            <p>One payment. We connect your free .co.uk domain and have your site live within 48 hours. No monthly fees, no subscriptions, no surprises — ever.</p>
         </div>
     </div>
 </section>
@@ -353,51 +618,51 @@
             <div>
                 <div class="section-label">What's Included</div>
                 <h2 class="section-h">Everything your<br>business needs online</h2>
-                <p class="section-sub" style="margin-top:.8rem;">Every site we build comes fully loaded — no extras, no upsells, no hidden costs.</p>
+                <p class="section-sub" style="margin-top:.8rem;">Every site comes fully loaded. No extras to buy. No upsells. No hidden costs. What you see is what you get — and more.</p>
                 <div class="section-rule"></div>
                 <br><br>
-                <a href="#contact" class="btn-primary" style="display:inline-block;">Get Started Free</a>
+                <a href="#contact" class="btn-primary" style="display:inline-block;">Get My Free Preview →</a>
             </div>
             <div class="features-grid">
+                <div class="feature highlight">
+                    <div class="feat-icon">♾️</div>
+                    <h4>Unlimited Amendments</h4>
+                    <p>Change anything, any time, for 12 months — completely free. New prices, photos, services, copy. No charge, no limit.</p>
+                </div>
+                <div class="feature highlight">
+                    <div class="feat-icon">📧</div>
+                    <h4>Free Business Email</h4>
+                    <p>Get hello@yourbusiness.co.uk — looks professional, builds trust with customers. Fully set up, included free.</p>
+                </div>
                 <div class="feature">
                     <div class="feat-icon">📱</div>
-                    <h4>Mobile-First</h4>
-                    <p>Perfect on every device. Over 80% of your customers will find you on mobile.</p>
+                    <h4>Mobile-First Design</h4>
+                    <p>Perfect on every device. Over 80% of your customers will find you on mobile — your site is built for that.</p>
                 </div>
                 <div class="feature">
                     <div class="feat-icon">🔍</div>
                     <h4>SEO Ready</h4>
-                    <p>Built for Google from day one. Show up in local searches in your area.</p>
+                    <p>Built for Google from day one. Show up in local searches when customers in your area look for your service.</p>
+                </div>
+                <div class="feature">
+                    <div class="feat-icon">🌐</div>
+                    <h4>Free .co.uk Domain</h4>
+                    <p>Your own professional web address, registered and connected by us. Included free — nothing extra to pay.</p>
                 </div>
                 <div class="feature">
                     <div class="feat-icon">⚡</div>
                     <h4>Fast Loading</h4>
-                    <p>Sub-2-second load times. Slow sites lose customers — yours won't.</p>
-                </div>
-                <div class="feature">
-                    <div class="feat-icon">⭐</div>
-                    <h4>Google Reviews</h4>
-                    <p>Your real reviews showcased front and centre to build instant trust.</p>
-                </div>
-                <div class="feature">
-                    <div class="feat-icon">✏️</div>
-                    <h4>Unlimited Edits</h4>
-                    <p>We work with you until every detail is exactly right. No change limits.</p>
-                </div>
-                <div class="feature">
-                    <div class="feat-icon">🔒</div>
-                    <h4>SSL & Secure</h4>
-                    <p>HTTPS, the padlock, and secure hosting included as standard. Always.</p>
+                    <p>Sub-2-second load times. Slow sites lose customers before they even see you — yours won't.</p>
                 </div>
                 <div class="feature">
                     <div class="feat-icon">📞</div>
-                    <h4>Click-to-Call</h4>
-                    <p>One tap to call or message you. Easy for customers, more enquiries for you.</p>
+                    <h4>Click-to-Call &amp; WhatsApp</h4>
+                    <p>One tap to call or message you directly. Maximum convenience for customers = more enquiries for you.</p>
                 </div>
                 <div class="feature">
-                    <div class="feat-icon">🌐</div>
-                    <h4>Custom Domain</h4>
-                    <p>We'll get you set up on your own .co.uk domain, fully connected and live.</p>
+                    <div class="feat-icon">🔒</div>
+                    <h4>SSL Secured</h4>
+                    <p>HTTPS, the padlock, professional hosting — included as standard. Your customers can trust your site from day one.</p>
                 </div>
             </div>
         </div>
@@ -409,45 +674,66 @@
     <div class="pricing-header">
         <div class="section-label">Simple Pricing</div>
         <h2 class="section-h">One payment. You own it.</h2>
-        <p class="section-sub">No monthly fees. No subscriptions. No surprises. Just a professional website you own outright.</p>
+        <p class="section-sub">No monthly fees. No subscriptions. No surprises. Agencies charge £2,000–£5,000 for this — we don't.</p>
         <div class="section-rule"></div>
     </div>
+
+    <div class="scarcity-bar">
+        <span class="scarcity-text">⚠️ &nbsp;This pricing is only guaranteed for:</span>
+        <div class="countdown-wrap">
+            <span class="countdown" id="countdown-timer">71:59:59</span>
+        </div>
+        <span class="scarcity-text">— after this we move availability to the next business in the queue.</span>
+    </div>
+
+    <div class="price-anchor-note">
+        Typical web agency price: <s>£2,000–£5,000+</s> &nbsp;|&nbsp; <strong>WebCraft UK: from £500 — one-off, no monthly fees</strong>
+    </div>
+
     <div class="pricing-cards">
         <div class="price-card">
             <div class="price-tier">Starter</div>
+            <div class="price-was">Agencies charge <s>£2,000+</s></div>
             <div class="price-amt"><sup>£</sup>500</div>
-            <p class="price-desc">Perfect for sole traders and small local shops</p>
+            <p class="price-desc">Perfect for sole traders and small local businesses</p>
             <div class="price-divider"></div>
             <ul class="price-features">
+                <li>Free custom preview — see it before you pay</li>
                 <li>Professional 5-page website</li>
                 <li>Mobile-responsive design</li>
                 <li>Services &amp; pricing page</li>
                 <li>Contact form &amp; click-to-call</li>
                 <li>Google reviews section</li>
                 <li>Basic SEO setup</li>
-                <li>Free preview before you pay</li>
+                <li class="green">Free .co.uk domain included</li>
+                <li class="green">Free business email address</li>
+                <li class="green">Unlimited amendments — 12 months</li>
             </ul>
-            <a href="#contact" class="price-btn price-btn-outline">Get Started</a>
+            <a href="#contact" class="price-btn price-btn-outline">Get My Free Preview</a>
         </div>
         <div class="price-card featured">
             <div class="popular-badge">Most Popular</div>
             <div class="price-tier">Professional</div>
+            <div class="price-was">Agencies charge <s>£3,000+</s></div>
             <div class="price-amt"><sup>£</sup>1,000</div>
-            <p class="price-desc">For businesses ready to grow their online presence</p>
+            <p class="price-desc">For businesses ready to grow and get found on Google</p>
             <div class="price-divider"></div>
             <ul class="price-features">
                 <li>Everything in Starter</li>
                 <li>Photo gallery with your images</li>
                 <li>Online booking integration</li>
-                <li>Custom domain setup (.co.uk)</li>
                 <li>Advanced local SEO</li>
                 <li>Google Maps integration</li>
-                <li>3 months free support</li>
+                <li class="green">Free .co.uk domain included</li>
+                <li class="green">Free business email address</li>
+                <li class="green">Unlimited amendments — 12 months</li>
+                <li class="green">3 months priority support</li>
             </ul>
-            <a href="#contact" class="price-btn price-btn-fill">Get Started</a>
+            <a href="#contact" class="price-btn price-btn-fill">Get My Free Preview</a>
         </div>
         <div class="price-card">
             <div class="price-tier">Premium</div>
+            <div class="price-was">Agencies charge <s>£5,000+</s></div>
             <div class="price-amt"><sup>£</sup>2,000<span style="font-size:1rem;color:var(--muted);font-weight:500;">+</span></div>
             <p class="price-desc">Fully bespoke build for established businesses</p>
             <div class="price-divider"></div>
@@ -457,55 +743,96 @@
                 <li>E-commerce &amp; online payments</li>
                 <li>Blog or news section</li>
                 <li>Staff profiles &amp; team pages</li>
-                <li>Priority support</li>
-                <li>6 months free support</li>
+                <li class="green">Free .co.uk domain included</li>
+                <li class="green">Free business email address</li>
+                <li class="green">Unlimited amendments — 12 months</li>
+                <li class="green">6 months priority support</li>
             </ul>
-            <a href="#contact" class="price-btn price-btn-outline">Get Started</a>
+            <a href="#contact" class="price-btn price-btn-outline">Get My Free Preview</a>
         </div>
     </div>
+    <p class="price-guarantee">🔒 <strong>Zero risk.</strong> You see your full website free before paying a single penny. If you don't love it, you don't pay — no questions asked.</p>
 </section>
 
-<!-- Examples -->
+<!-- Examples — rebranded -->
 <section class="examples" id="examples">
     <div class="examples-header">
-        <div class="section-label">Our Work</div>
-        <h2 class="section-h">Live example sites</h2>
-        <p class="section-sub" style="margin:.5rem auto 0;">Real websites we've built for real UK businesses.</p>
+        <div class="section-label">Preview Quality</div>
+        <h2 class="section-h">This is what your free preview looks like</h2>
+        <p class="section-sub" style="margin:.5rem auto 0;">Every site below was built completely free, before the business paid a penny. This is the exact quality and standard you'll receive — for free, before you decide anything.</p>
         <div class="section-rule" style="margin:.8rem auto 0;"></div>
     </div>
     <div class="example-grid">
         <a href="https://webcraft01.github.io/sites/devans-fade/" target="_blank" class="example-card">
+            <div class="preview-badge">FREE PREVIEW EXAMPLE</div>
             <div class="example-img" style="background-image:url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=600&q=80')"></div>
             <div class="example-info">
                 <div class="example-cat">Barber · Manchester</div>
                 <div class="example-name">Devan's Fade</div>
-                <div class="example-link">View live site →</div>
+                <div class="example-link">View preview site →</div>
             </div>
         </a>
         <a href="https://webcraft01.github.io/sites/kam-personal-training/" target="_blank" class="example-card">
+            <div class="preview-badge">FREE PREVIEW EXAMPLE</div>
             <div class="example-img" style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80')"></div>
             <div class="example-info">
                 <div class="example-cat">Personal Trainer · Liverpool</div>
                 <div class="example-name">KAM Personal Training</div>
-                <div class="example-link">View live site →</div>
+                <div class="example-link">View preview site →</div>
             </div>
         </a>
         <a href="https://webcraft01.github.io/sites/himawari-sushi-japanese-restaurant/" target="_blank" class="example-card">
+            <div class="preview-badge">FREE PREVIEW EXAMPLE</div>
             <div class="example-img" style="background-image:url('https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=600&q=80')"></div>
             <div class="example-info">
                 <div class="example-cat">Japanese Restaurant · London</div>
                 <div class="example-name">Himawari Sushi</div>
-                <div class="example-link">View live site →</div>
+                <div class="example-link">View preview site →</div>
             </div>
         </a>
         <a href="https://webcraft01.github.io/sites/venture-landscaping/" target="_blank" class="example-card">
+            <div class="preview-badge">FREE PREVIEW EXAMPLE</div>
             <div class="example-img" style="background-image:url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=600&q=80')"></div>
             <div class="example-info">
                 <div class="example-cat">Landscaping · UK</div>
                 <div class="example-name">Venture Landscaping</div>
-                <div class="example-link">View live site →</div>
+                <div class="example-link">View preview site →</div>
             </div>
         </a>
+    </div>
+</section>
+
+<!-- Referral Section -->
+<section class="referral-section">
+    <div class="referral-inner">
+        <div class="referral-pill">💸 Referral Programme</div>
+        <h2 class="referral-h">Know another business<br>without a website?</h2>
+        <div class="referral-amount">£150–£600 cash</div>
+        <p class="referral-sub">Refer any business to us. If they go live with a WebCraft UK website, we send you cash — straight to your bank. No limit on how many businesses you can refer.</p>
+        <div class="referral-how">
+            <div class="referral-step">
+                <div class="referral-step-icon">📲</div>
+                <div class="referral-step-text">
+                    <strong>Share our details</strong>
+                    Send them our WhatsApp or website link
+                </div>
+            </div>
+            <div class="referral-step">
+                <div class="referral-step-icon">🚀</div>
+                <div class="referral-step-text">
+                    <strong>They go live</strong>
+                    They get their site built and pay us
+                </div>
+            </div>
+            <div class="referral-step">
+                <div class="referral-step-icon">💰</div>
+                <div class="referral-step-text">
+                    <strong>You get paid</strong>
+                    £150–£600 cash sent to you — every time
+                </div>
+            </div>
+        </div>
+        <p class="referral-cta">Just mention your name when they get in touch and we handle the rest.</p>
     </div>
 </section>
 
@@ -519,27 +846,35 @@
     <div class="faq-list">
         <div class="faq-item open">
             <div class="faq-q">Do I have to pay anything to see my preview? <span class="faq-icon">+</span></div>
-            <div class="faq-a">No. We build your preview completely free. You only pay if you love it and want to go live. Zero upfront cost, zero obligation.</div>
+            <div class="faq-a">Absolutely not. We build your full website completely free — no card, no deposit, zero upfront cost. You only pay if you see it, love it, and want to go live. If you don't like it, you walk away and pay nothing. That's the whole model.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">What does "unlimited amendments" actually mean? <span class="faq-icon">+</span></div>
+            <div class="faq-a">Exactly what it says. For 12 months from when your site goes live, you can request any change — new services, updated prices, different photos, new sections, tweaked copy — as many times as you like. We make every change free of charge, no questions asked.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">What's included with the free domain and email? <span class="faq-icon">+</span></div>
+            <div class="faq-a">We register a .co.uk domain in your business name (e.g. devansfade.co.uk), connect it to your website, and set it all up — included in your package at no extra cost. We also set up a professional business email address (e.g. hello@devansfade.co.uk) so you look the part from day one. Both are fully handled by us.</div>
         </div>
         <div class="faq-item">
             <div class="faq-q">Are there any monthly fees after I pay? <span class="faq-icon">+</span></div>
-            <div class="faq-a">No monthly fees from us. You pay once and you own the website. The only ongoing cost is a domain renewal — typically £10–15 per year.</div>
+            <div class="faq-a">No monthly fees from us, ever. You pay once and you own the website outright. The only ongoing cost is your domain renewal — typically £10–15 per year — which you pay directly to the domain registrar.</div>
         </div>
         <div class="faq-item">
-            <div class="faq-q">Can I update the website myself? <span class="faq-icon">+</span></div>
-            <div class="faq-a">Yns — we can set it up so you can make updates yourself. Or we handle changes for you. We're flexible depending on what works best.</div>
+            <div class="faq-q">What if I want changes before I pay? <span class="faq-icon">+</span></div>
+            <div class="faq-a">That's the whole point of the preview. Your site is a draft — change anything you want before committing. Different layout, different colours, different photos, different text — just tell us and we'll update it for free until it's exactly right. You pay nothing until you're 100% happy.</div>
         </div>
         <div class="faq-item">
-            <div class="faq-q">What if I don't have photos? <span class="faq-icon">+</span></div>
-            <div class="faq-a">No problem. We source professional imagery relevant to your business type so the site looks great from day one. When you get your own photos, we swap them in at no extra cost.</div>
+            <div class="faq-q">How does the referral commission work? <span class="faq-icon">+</span></div>
+            <div class="faq-a">If you refer another business to us and they go live with a WebCraft UK website, we send you 30% of whatever they pay — that's £150 for a Starter site, up to £600+ for Premium. Just make sure they mention your name when they get in touch and we'll handle the rest. There's no limit on how many referrals you make.</div>
         </div>
         <div class="faq-item">
             <div class="faq-q">How long does it take to go live? <span class="faq-icon">+</span></div>
-            <div class="faq-a">Once you confirm you want to go ahead, your final site is live within 48 hours. Fast, simple, sorted.</div>
+            <div class="faq-a">Once you confirm you're happy and make payment, your site is live and connected to your domain within 48 hours. Fast, simple, sorted.</div>
         </div>
         <div class="faq-item">
             <div class="faq-q">What types of businesses do you work with? <span class="faq-icon">+</span></div>
-            <div class="faq-a">All types of UK small businesses — barbers, hair and beauty salons, personal trainers, restaurants, cafés, plumbers, electricians, builders, nail bars, tattoo studios and much more.</div>
+            <div class="faq-a">All types of UK small businesses — barbers, hair and beauty salons, personal trainers, restaurants, cafés, plumbers, electricians, builders, nail bars, tattoo studios, landscapers, cleaners, and much more. If you run a business in the UK, we can build your site.</div>
         </div>
     </div>
 </section>
@@ -548,21 +883,29 @@
 <section class="contact-section" id="contact">
     <div class="contact-inner">
         <div class="section-label">Get In Touch</div>
-        <h2 class="section-h">Ready to see your<br>free website preview?</h2>
-        <p>Reach out and we'll build your preview site — completely free. No payment, no obligation. Just a professional website built for your business, ready to view.</p>
+        <h2 class="section-h">Ready to see your<br>free website — right now?</h2>
+        <p>Tell us your business name and we'll build your full custom website and send you the live preview link — completely free. No card. No obligation. No risk.</p>
+        <div class="contact-offer-list">
+            <span class="contact-offer-tag">✓ Free preview first</span>
+            <span class="contact-offer-tag">✓ Free .co.uk domain</span>
+            <span class="contact-offer-tag">✓ Free business email</span>
+            <span class="contact-offer-tag">✓ Unlimited changes — 12 months</span>
+            <span class="contact-offer-tag">✓ Live in 48 hours</span>
+            <span class="contact-offer-tag">✓ £150–£600 referral cash</span>
+        </div>
         <div class="contact-cards">
             <a href="mailto:hello@webcraftuk.co.uk" class="contact-card">
                 <div class="contact-card-icon">✉️</div>
                 <div class="contact-card-label">Email</div>
                 <div class="contact-card-val">hello@webcraftuk.co.uk</div>
             </a>
-            <a href="https://wa.me/447983962399?text=Hi%20WebCraft%20UK%2C%20I%27d%20love%20a%20free%20preview%20of%20my%20website!" class="contact-card">
+            <a href="https://wa.me/447983962399?text=Hi%20WebCraft%20UK%2C%20I%27d%20love%20a%20free%20preview%20of%20my%20website%20-%20my%20business%20is%3A%20" class="contact-card">
                 <div class="contact-card-icon">💬</div>
                 <div class="contact-card-label">WhatsApp</div>
                 <div class="contact-card-val">07983 962399</div>
             </a>
         </div>
-        <p class="contact-note">We reply within a few hours · UK-based · Serving businesses nationwide</p>
+        <p class="contact-note">We reply within a few hours · UK-based team · Serving businesses nationwide</p>
     </div>
 </section>
 
@@ -583,14 +926,12 @@
         nav.classList.toggle('open');
     });
 
-    // Show mobile CTA on small screens
     if(window.innerWidth <= 768) mobileCta.style.display = 'block';
     window.addEventListener('resize', () => {
         if(window.innerWidth <= 768) mobileCta.style.display = 'block';
         else mobileCta.style.display = 'none';
     });
 
-    // Close nav on link click
     document.querySelectorAll('nav a').forEach(a => {
         a.addEventListener('click', () => nav.classList.remove('open'));
     });
@@ -604,6 +945,37 @@
             if(!wasOpen) item.classList.add('open');
         });
     });
+
+    // 72-hour countdown timer (localStorage-based — persists across visits)
+    function initCountdown() {
+        const KEY = 'wc_offer_expiry_v2';
+        let expiry = localStorage.getItem(KEY);
+        if (!expiry || isNaN(parseInt(expiry))) {
+            expiry = Date.now() + 72 * 60 * 60 * 1000;
+            localStorage.setItem(KEY, expiry);
+        }
+        expiry = parseInt(expiry);
+
+        const el = document.getElementById('countdown-timer');
+        if (!el) return;
+
+        function tick() {
+            const remaining = expiry - Date.now();
+            if (remaining <= 0) {
+                el.textContent = '00:00:00';
+                const bar = document.querySelector('.scarcity-bar');
+                if (bar) bar.style.background = '#FEE2E2';
+                return;
+            }
+            const h = Math.floor(remaining / 3600000);
+            const m = Math.floor((remaining % 3600000) / 60000);
+            const s = Math.floor((remaining % 60000) / 1000);
+            el.textContent = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+            setTimeout(tick, 1000);
+        }
+        tick();
+    }
+    initCountdown();
 </script>
 </body>
 </html>
